@@ -68,12 +68,13 @@ def transform(spark, input_df) -> DataFrame:
 
 def load(df, out_path):
     """Load data from json file and return a DataFrame
+    Please remove the commented code for persisting the data into s3 bucket
 
         :param df: output DataFrame
         :param out_path: output file path
         :return: True for success"""
 
-    df.write.parquet(out_path, mode='overwrite')
+    # df.write.parquet(out_path, mode='overwrite')
 
     return True
 
