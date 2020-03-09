@@ -10,7 +10,7 @@ import pandas as pd
 class MyTestCase(PySparkTest):
     """To do"""
 
-    def setUp(self) -> None:
+    def setUp(self) :
         with open('tests/fixtures/fixtures.json') as f:
             self.fixture = json.load(f)
             data = self.fixture.get("input_data")
