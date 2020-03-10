@@ -3,14 +3,14 @@ import json
 from tests.PySparkTest import PySparkTest
 from pyspark.sql import Row, DataFrame
 from utils.schema import input_schema, op_schema
-from jobs import intercom
+from jobs import pipeline
 import pandas as pd
 
 
 class MyTestCase(PySparkTest):
     """To do"""
 
-    def setUp(self) :
+    def setUp(self):
         with open('tests/fixtures/fixtures.json') as f:
             self.fixture = json.load(f)
             data = self.fixture.get("input_data")
@@ -23,7 +23,7 @@ class MyTestCase(PySparkTest):
     def test_transform(self):
         """To do"""
 
-        op_df = intercom.transform(self.spark, self.df)
+        op_df = pipeline.transform(self.spark, self.df)
         op_df_sorted = op_df.toPandas().sort_values(by=['id', 'event_name', 'created_at'], axis=0).set_index('id')
         exp_df_sorted = self.expected_df.toPandas().sort_values(by=['id', 'event_name', 'created_at'], axis=0).set_index('id')
 

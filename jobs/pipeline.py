@@ -22,7 +22,7 @@ def extract(spark, file_path):
     return spark.read.json(file_path, input_schema)
 
 
-def transform(spark, input_df) -> DataFrame:
+def transform(spark, input_df):
     """Transform an input spark DataFrame into an output DataFrame
 
     Based on the transformation logic
