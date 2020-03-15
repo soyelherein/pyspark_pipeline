@@ -6,6 +6,8 @@ verify_ssl = true
 [dev-packages]
 pandas = "*"
 pyspark = "==2.3.2"
+ipython = "*"
 
 [packages]
 configparser = "*"
+argparse = "*"
