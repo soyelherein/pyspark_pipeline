@@ -17,6 +17,7 @@
    |-- .env
    |-- .gitignore
    |-- Makefile
+   |-- packages.zip
    |-- Pipfile
    |-- Pipfile.lock
    |-- README.md
